@@ -3,12 +3,18 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 import { HeaderComponent } from './components/header/header.component';
 import { TaskComponent } from './components/task/task.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ButtonComponent } from './components/button/button.component';
 import { ItemTaskComponent } from './components/item-task/item-task.component';
+import { TaskService } from './services/task.service';
+import { AddTaskComponent } from './components/add-task/add-task.component';
+import { UiService } from './services/ui.service';
+
 
 
 
@@ -25,7 +31,10 @@ import { ItemTaskComponent } from './components/item-task/item-task.component';
     TaskComponent,
     ItemTaskComponent,
     ButtonComponent,
-    FontAwesomeModule],
+    FontAwesomeModule,
+    AddTaskComponent,
+    FormsModule],
+  providers: [TaskService, UiService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

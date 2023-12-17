@@ -1,22 +1,28 @@
 {
   "tasks": [
     {
-      "id":1,
+      "id": 1,
       "text": "Creating a sample using agular",
       "day": "May 5th at 13:30",
       "reminder": true
     },
     {
-      "id":2,
+      "id": 2,
       "text": "Creating a sample using agular",
-      "day": "May 5th at 13:30",
+      "day": "May 5th at 15:30",
+      "reminder": true
+    },
+    {
+      "id": 3,
+      "text": "Creating a sample using agular",
+      "day": "May 5th at 15:30",
       "reminder": false
     },
     {
-      "id":3,
-      "text": "Creating a sample using agular",
-      "day": "May 5th at 13:30",
-      "reminder": true
+      "text": "Hello",
+      "day": "asdasdas",
+      "reminder": false,
+      "id": 4
     }
   ]
 }
