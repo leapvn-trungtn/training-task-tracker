@@ -6,11 +6,12 @@ import { TaskService } from '../../services/task.service';
 import { Observable, of, take } from 'rxjs';
 import { response } from 'express';
 import { AddTaskComponent } from '../add-task/add-task.component';
-
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-task',
   standalone: true,
-  imports: [ItemTaskComponent,CommonModule,AddTaskComponent],
+  imports: [ItemTaskComponent,CommonModule,AddTaskComponent,ToastModule],
   templateUrl: './task.component.html',
   styleUrl: './task.component.scss',
 
@@ -18,7 +19,7 @@ import { AddTaskComponent } from '../add-task/add-task.component';
 export class TaskComponent {
   tasks: Task[] = [];
 
-  constructor(private taskService: TaskService) {
+  constructor(private taskService: TaskService, private messageService:MessageService) {
   }
   ngOnInit(): void {
     this.taskService.getTasks().subscribe((tasks)=> this.tasks = tasks);
@@ -37,7 +38,13 @@ export class TaskComponent {
     );
   }
   addTask(task:Task){
-    this.taskService.addTask(task).subscribe(()=>
-    this.tasks.push(task));
+    this.taskService.addTask(task).subscribe(
+      ()=>{
+        this.tasks.push(task);
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Add Task Successfully' });
+      },
+      (error)=> {
+          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Add Task Fail' });
+      });
   }
 }

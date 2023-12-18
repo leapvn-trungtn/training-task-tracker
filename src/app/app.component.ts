@@ -15,8 +15,8 @@ import { TaskService } from './services/task.service';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { UiService } from './services/ui.service';
 
-
-
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 
 @Component({
@@ -33,8 +33,10 @@ import { UiService } from './services/ui.service';
     ButtonComponent,
     FontAwesomeModule,
     AddTaskComponent,
-    FormsModule],
-  providers: [TaskService, UiService],
+    FormsModule,
+
+    ToastModule],
+  providers: [TaskService, UiService,MessageService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

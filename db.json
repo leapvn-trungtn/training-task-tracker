@@ -10,7 +10,7 @@
       "id": 2,
       "text": "Creating a sample using agular",
       "day": "May 5th at 15:30",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 3,
@@ -19,10 +19,16 @@
       "reminder": false
     },
     {
-      "text": "Hello",
-      "day": "asdasdas",
-      "reminder": false,
+      "text": "sdasd",
+      "day": "asdasd",
+      "reminder": true,
       "id": 4
+    },
+    {
+      "text": "sdasd",
+      "day": "asdasda",
+      "reminder": true,
+      "id": 5
     }
   ]
 }
